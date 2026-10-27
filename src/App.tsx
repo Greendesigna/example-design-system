@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import type { NavTab } from './components/Navigation';
-import type { Nft } from './data/nfts';
+import type { Category, Nft } from './data/nfts';
 import { CompareScreen } from './screens/CompareScreen';
 import { DetailScreen } from './screens/DetailScreen';
 
 export default function App() {
+  const [category, setCategory] = useState<Category>('Avatars');
   const [openNft, setOpenNft] = useState<Nft | null>(null);
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
 
@@ -31,11 +32,20 @@ export default function App() {
       <DetailScreen
         nft={openNft}
         saved={savedIds.has(openNft.id)}
+        savedCount={savedIds.size}
         onToggleSaved={() => toggleSaved(openNft.id)}
         onOpenNft={setOpenNft}
         onNavigate={navigate}
       />
     );
   }
-  return <CompareScreen onOpenNft={setOpenNft} onNavigate={navigate} />;
+  return (
+    <CompareScreen
+      category={category}
+      onChangeCategory={setCategory}
+      savedCount={savedIds.size}
+      onOpenNft={setOpenNft}
+      onNavigate={navigate}
+    />
+  );
 }

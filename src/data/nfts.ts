@@ -8,8 +8,34 @@ import raccoon from '../assets/nfts/raccoon.png';
 import mafia from '../assets/nfts/mafia.png';
 import anime from '../assets/nfts/anime.png';
 
+import genA from '../assets/nfts/generative/a.png';
+import genB from '../assets/nfts/generative/b.png';
+import genC from '../assets/nfts/generative/c.png';
+import genD from '../assets/nfts/generative/d.png';
+import genE from '../assets/nfts/generative/e.png';
+import genF from '../assets/nfts/generative/f.png';
+import genG from '../assets/nfts/generative/g.png';
+import genH from '../assets/nfts/generative/h.png';
+import genI from '../assets/nfts/generative/i.png';
+
+import artA from '../assets/nfts/artwork/a.png';
+import artB from '../assets/nfts/artwork/b.png';
+import artC from '../assets/nfts/artwork/c.png';
+import artD from '../assets/nfts/artwork/d.png';
+import artE from '../assets/nfts/artwork/e.png';
+import artF from '../assets/nfts/artwork/f.png';
+import artG from '../assets/nfts/artwork/g.png';
+import artH from '../assets/nfts/artwork/h.png';
+import artI from '../assets/nfts/artwork/i.png';
+
+/** The prototype's category row cycles through these four. */
+export const CATEGORIES = ['Avatars', 'Generative', 'Artwork', 'Collectables'] as const;
+
+export type Category = (typeof CATEGORIES)[number];
+
 export type Nft = {
   id: string;
+  category: Category;
   name: string;
   creator: string;
   image: string;
@@ -17,33 +43,51 @@ export type Nft = {
   gridArea: string;
 };
 
-export const CATEGORIES = [
-  'Avatars',
-  'Generative',
-  'Artwork',
-  'Collectables',
-  'Photography',
-  'Music',
-  'Gaming',
-] as const;
-
-export type Category = (typeof CATEGORIES)[number];
+const UNKNOWN_ARTIST = 'Unknown artist';
 
 /**
  * Only "Mysterious Mafia Man PFP Avatar" by Pikisuperstar is named in the Figma
- * prototype. The other names and creators are placeholders.
+ * prototype. Every other name and creator is a placeholder.
  */
-export const NFTS: Nft[] = [
-  { id: 'wizard', name: 'Wizard Hat Avatar', creator: 'Unknown artist', image: wizard, gridArea: 'a' },
-  { id: 'mafia', name: 'Mysterious Mafia Man PFP Avatar', creator: 'Pikisuperstar', image: mafia, gridArea: 'b' },
-  { id: 'cat', name: 'Teal Lucky Cat', creator: 'Unknown artist', image: cat, gridArea: 'c' },
-  { id: 'frog', name: 'Dancing Frog', creator: 'Unknown artist', image: frog, gridArea: 'd' },
-  { id: 'punk', name: 'Pixel Punk', creator: 'Unknown artist', image: punk, gridArea: 'e' },
-  { id: 'leopard', name: 'Leopard Hood Avatar', creator: 'Unknown artist', image: leopard, gridArea: 'f' },
-  { id: 'anime', name: 'Masked Anime Avatar', creator: 'Unknown artist', image: anime, gridArea: 'g' },
-  { id: 'orange', name: 'Purple Hair Avatar', creator: 'Unknown artist', image: orange, gridArea: 'h' },
-  { id: 'raccoon', name: 'Sword Raccoon', creator: 'Unknown artist', image: raccoon, gridArea: 'i' },
+const AVATARS: Nft[] = [
+  { id: 'avatars-a', category: 'Avatars', name: 'Wizard Hat Avatar', creator: UNKNOWN_ARTIST, image: wizard, gridArea: 'a' },
+  { id: 'avatars-b', category: 'Avatars', name: 'Mysterious Mafia Man PFP Avatar', creator: 'Pikisuperstar', image: mafia, gridArea: 'b' },
+  { id: 'avatars-c', category: 'Avatars', name: 'Teal Lucky Cat', creator: UNKNOWN_ARTIST, image: cat, gridArea: 'c' },
+  { id: 'avatars-d', category: 'Avatars', name: 'Dancing Frog', creator: UNKNOWN_ARTIST, image: frog, gridArea: 'd' },
+  { id: 'avatars-e', category: 'Avatars', name: 'Pixel Punk', creator: UNKNOWN_ARTIST, image: punk, gridArea: 'e' },
+  { id: 'avatars-f', category: 'Avatars', name: 'Leopard Hood Avatar', creator: UNKNOWN_ARTIST, image: leopard, gridArea: 'f' },
+  { id: 'avatars-g', category: 'Avatars', name: 'Masked Anime Avatar', creator: UNKNOWN_ARTIST, image: anime, gridArea: 'g' },
+  { id: 'avatars-h', category: 'Avatars', name: 'Purple Hair Avatar', creator: UNKNOWN_ARTIST, image: orange, gridArea: 'h' },
+  { id: 'avatars-i', category: 'Avatars', name: 'Sword Raccoon', creator: UNKNOWN_ARTIST, image: raccoon, gridArea: 'i' },
 ];
+
+/** Builds a category's nine NFTs from images in grid-area order a to i. */
+function placeholderSet(category: Category, images: Record<string, string>): Nft[] {
+  return Object.entries(images).map(([gridArea, image], index) => ({
+    id: `${category.toLowerCase()}-${gridArea}`,
+    category,
+    name: `${category} #${index + 1}`,
+    creator: UNKNOWN_ARTIST,
+    image,
+    gridArea,
+  }));
+}
+
+const GENERATIVE = placeholderSet('Generative', {
+  a: genA, b: genB, c: genC, d: genD, e: genE, f: genF, g: genG, h: genH, i: genI,
+});
+
+const ARTWORK = placeholderSet('Artwork', {
+  a: artA, b: artB, c: artC, d: artD, e: artE, f: artF, g: artG, h: artH, i: artI,
+});
+
+/** Collectables has no design in the prototype yet, so it is empty. */
+export const NFTS_BY_CATEGORY: Record<Category, Nft[]> = {
+  Avatars: AVATARS,
+  Generative: GENERATIVE,
+  Artwork: ARTWORK,
+  Collectables: [],
+};
 
 /** Placeholder copy from the prototype's Detail screen. */
 export const PLACEHOLDER_DESCRIPTION =

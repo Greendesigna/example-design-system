@@ -16,7 +16,7 @@ export function NftTile({ nft, onSelect, width, height }: NftTileProps) {
     ...(width ? { width, flex: `0 0 ${width}px` } : null),
     ...(height ? { height } : null),
   };
-  const image = <img className="nft-tile__image" src={nft.image} alt={nft.name} />;
+  const image = <img className="nft-tile__image" src={nft.image} alt={nft.name} draggable={false} />;
 
   if (!onSelect) {
     return (

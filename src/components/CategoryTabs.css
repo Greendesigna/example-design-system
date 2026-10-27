@@ -4,6 +4,17 @@
   padding: 0 var(--space-gutter);
   overflow-x: auto;
   scrollbar-width: none;
+  user-select: none;
+}
+
+@media (hover: hover) {
+  .category-tabs {
+    cursor: grab;
+  }
+}
+
+.category-tabs.is-dragging {
+  cursor: grabbing;
 }
 
 .category-tabs::-webkit-scrollbar {

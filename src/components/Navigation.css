@@ -27,6 +27,17 @@
   color: var(--color-nav-active);
 }
 
+/* Pink dot at the top right of the Saved icon when something is saved. */
+.navigation__badge {
+  position: absolute;
+  top: 19px;
+  left: calc(50% + 6px);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
 /* Marker dot under the active tab. */
 .navigation__tab[aria-current='page']::after {
   content: '';

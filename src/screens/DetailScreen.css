@@ -67,9 +67,24 @@
   margin-bottom: 24px;
   padding: 0 var(--space-gutter);
   overflow-x: auto;
+  user-select: none;
+  /* Touch devices swipe; mouse users can drag the row or use the thin scrollbar. */
   scrollbar-width: none;
 }
 
-.detail__similar::-webkit-scrollbar {
-  display: none;
+@media (hover: hover) {
+  .detail__similar {
+    cursor: grab;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+}
+
+.detail__similar.is-dragging {
+  cursor: grabbing;
+}
+
+.detail__similar:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
 }

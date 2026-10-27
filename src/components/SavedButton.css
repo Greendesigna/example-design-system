@@ -2,6 +2,13 @@
   display: block;
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+}
+
+/* Grey circle behind the heart while hovered or pressed, as in the prototype. */
+.saved-button:hover,
+.saved-button:active {
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .saved-button img,
