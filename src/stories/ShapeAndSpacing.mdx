@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Shape and spacing" />
+
+# Shape and spacing
+
+## Radius
+
+export const box = { background: 'var(--color-image-placeholder)' };
+
+<div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', flexWrap: 'wrap', margin: '24px 0' }}>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 120, height: 120, borderRadius: 'var(--radius-screen)' }} />
+    <figcaption><code>--radius-screen</code> 20px<br />Phone-width screen on wide displays</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 109, height: 108, borderRadius: 'var(--radius-tile)' }} />
+    <figcaption><code>--radius-tile</code> 10px<br />NFT tiles</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 160, height: 64, borderRadius: 'var(--radius-pill)' }} />
+    <figcaption><code>--radius-pill</code> 100px<br />Navigation bar</figcaption>
+  </figure>
+</div>
+
+## Spacing
+
+<div style={{ display: 'flex', gap: 'var(--space-tile-gap)', margin: '24px 0' }}>
+  {[0, 1, 2].map((i) => (
+    <div key={i} style={{ ...box, width: 36, height: 36, borderRadius: 4 }} />
+  ))}
+</div>
+
+- `--space-gutter` 16px: side margin of every screen
+- `--space-tile-gap` 8px: gap between NFT tiles, in the grid and in rows
+
+## Shadow
+
+<div style={{ padding: 32 }}>
+  <div style={{ width: 160, height: 64, borderRadius: 'var(--radius-pill)', background: '#fff', boxShadow: 'var(--shadow-nav)' }} />
+</div>
+
+`--shadow-nav`: `0 0 20px rgba(0, 0, 0, 0.1)`, used by the floating navigation bar.

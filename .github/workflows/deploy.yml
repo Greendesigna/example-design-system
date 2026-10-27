@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # Storybook is published inside the same site, at /storybook/
+      - run: npm run build-storybook -- -o dist/storybook
+        env:
+          STORYBOOK_DISABLE_TELEMETRY: 1
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

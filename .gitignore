@@ -4,3 +4,6 @@ dist/
 *.tsbuildinfo
 *.log
 .env*
+
+*storybook.log
+storybook-static

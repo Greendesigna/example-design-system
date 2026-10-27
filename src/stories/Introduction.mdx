@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# NFT Comparison design system
+
+The tokens, components and screens behind the [NFT Comparison app](https://greendesigna.github.io/nft-comparison-app/),
+built from the "GDA. Project - NFT Comparison Application" Figma prototype.
+
+## What's here
+
+- **Foundations:** [Colors](?path=/docs/foundations-colors--docs), [Typography](?path=/docs/foundations-typography--docs)
+  and [Shape and spacing](?path=/docs/foundations-shape-and-spacing--docs). Each value is a CSS variable in
+  `src/styles/tokens.css` and a Figma variable with the same name.
+- **Components:** Navigation, Nav icons, Category tabs, Saved button and NFT tile. Use the controls on each page to try
+  every state.
+- **Screens:** the Compare and Detail screens, working end to end with the components above.
+
+## Using the tokens
+
+Every style in the app reads from a token, so changing a value in `tokens.css` updates every component:
+
+```css
+.my-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius-tile);
+  font-family: var(--font-heading);
+}
+```
+
+## Keeping Figma and code in step
+
+The Figma file "NFT Comparison App - Design System" uses the same names. Colour variables carry their CSS name as
+code syntax, for example `var(--color-accent)`, and the five text styles match the `--text-*` tokens.
+
+## Run it
+
+```bash
+npm install
+npm run storybook
+```

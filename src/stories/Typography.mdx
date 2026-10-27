@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Oxygen for headings and body text, Hanken Grotesk for the category row. Both load from Google Fonts.
+
+export const styles = [
+  { name: 'Headline H1', spec: 'Oxygen Bold, 48 / 48', tokens: '--text-h1-size, --text-h1-line', use: 'Compare screen title', sample: 'Compare NFTs', style: { fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h1-size)', lineHeight: 'var(--text-h1-line)' } },
+  { name: 'Headline H2', spec: 'Oxygen Bold, 32 / 40', tokens: '--text-h2-size, --text-h2-line', use: 'NFT title on the Detail screen', sample: 'Mysterious Mafia Man PFP Avatar', style: { fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h2-size)', lineHeight: 'var(--text-h2-line)' } },
+  { name: 'Subheadline', spec: 'Oxygen Bold, 16 / 16', tokens: '--text-subheadline-size, --text-subheadline-line', use: 'Creator name and section headings', sample: 'Similar Photos', style: { fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-subheadline-size)', lineHeight: 'var(--text-subheadline-line)' } },
+  { name: 'Body', spec: 'Oxygen Regular, 14 / 24', tokens: '--text-body-size, --text-body-line', use: 'Description text', sample: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.', style: { fontFamily: 'var(--font-heading)', fontWeight: 400, fontSize: 'var(--text-body-size)', lineHeight: 'var(--text-body-line)' } },
+  { name: 'Nav Label', spec: 'Hanken Grotesk Regular, 16 / 16', tokens: '--text-nav-size, --text-nav-line', use: 'Category tabs', sample: 'Avatars   Generative   Artwork', style: { fontFamily: 'var(--font-ui)', fontWeight: 400, fontSize: 'var(--text-nav-size)', lineHeight: 'var(--text-nav-line)' } },
+];
+
+{styles.map((s) => (
+  <div key={s.name} style={{ padding: '24px 0', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+    <div style={{ ...s.style, color: '#000' }}>{s.sample}</div>
+    <div style={{ marginTop: 12, fontSize: 13, color: 'rgba(0,0,0,0.6)' }}>
+      <strong>{s.name}</strong> · {s.spec} · {s.use}
+      <br />
+      <code>{s.tokens}</code>
+    </div>
+  </div>
+))}

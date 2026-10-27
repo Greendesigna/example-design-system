@@ -5,6 +5,8 @@ React + Vite + TypeScript with plain CSS.
 
 **Live site:** https://greendesigna.github.io/nft-comparison-app/ (deploys automatically from `main` with GitHub Pages)
 
+**Design system (Storybook):** https://greendesigna.github.io/nft-comparison-app/storybook/
+
 ## Run it
 
 ```bash
@@ -13,6 +15,17 @@ npm run dev
 ```
 
 Then open the URL Vite prints (http://localhost:5173 by default). `npm run build` type-checks and builds to `dist/`.
+
+## Storybook
+
+```bash
+npm run storybook        # opens http://localhost:6006
+npm run build-storybook  # static build in storybook-static/
+```
+
+It documents the design tokens (colours, typography, shape and spacing), each component with its states, and the
+Compare and Detail screens. Stories live next to the code: `src/components/*.stories.tsx`, `src/screens/*.stories.tsx`,
+and the token pages in `src/stories/*.mdx`. The matching Figma file is "NFT Comparison App - Design System".
 
 ## What's built
 
@@ -31,6 +44,7 @@ src/
   components/   Navigation, NftTile, CategoryTabs, SavedButton, icons
   screens/      CompareScreen, DetailScreen
   data/         nfts.ts (images, names, grid placement)
+  stories/      Storybook token docs (Colors, Typography, Shape and spacing)
   styles/       tokens.css (colours, type, spacing), global.css
   assets/       NFT images and icons exported from Figma
 ```

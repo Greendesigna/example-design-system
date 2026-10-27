@@ -1,0 +1,34 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+CSS variables from `src/styles/tokens.css`. Transparent values are shown over white.
+
+## Backgrounds
+
+<ColorPalette>
+  <ColorItem title="--color-bg-dark" subtitle="Compare screen background" colors={['#090909']} />
+  <ColorItem title="--color-bg-light" subtitle="Detail screen and navigation bar" colors={['#ffffff']} />
+  <ColorItem title="--color-backdrop" subtitle="Page behind the phone-width screen on wide displays" colors={['#2a2a2a']} />
+  <ColorItem title="--color-image-placeholder" subtitle="Shows while an NFT image loads" colors={['#c4c4c4']} />
+</ColorPalette>
+
+## Text
+
+<ColorPalette>
+  <ColorItem title="--color-text-on-dark" subtitle="Compare title, active category" colors={['#fdfcfc']} />
+  <ColorItem title="--color-text-on-dark-muted" subtitle="Inactive category tabs" colors={['#cccccc']} />
+  <ColorItem title="--color-text-on-light" subtitle="Detail title and headings" colors={['#000000']} />
+  <ColorItem title="--color-text-on-light-muted" subtitle="Creator and description" colors={['rgba(0, 0, 0, 0.5)']} />
+</ColorPalette>
+
+## Accent and navigation
+
+<ColorPalette>
+  <ColorItem title="--color-accent" subtitle="Category dot, saved heart, saved indicator" colors={['#f04d6b']} />
+  <ColorItem title="--color-nav-active" subtitle="Active navigation icon and marker dot" colors={['#090909']} />
+  <ColorItem title="--color-nav-idle" subtitle="Idle navigation icons" colors={['rgba(0, 0, 0, 0.2)']} />
+  <ColorItem title="--color-divider" subtitle="Line above Similar Photos" colors={['rgba(0, 0, 0, 0.2)']} />
+</ColorPalette>
