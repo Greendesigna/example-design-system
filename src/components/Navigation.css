@@ -1,0 +1,47 @@
+.navigation {
+  position: sticky;
+  bottom: 20px;
+  display: flex;
+  height: 64px;
+  margin: auto var(--space-gutter) 20px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-nav);
+  z-index: 1;
+}
+
+.navigation__tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: var(--color-nav-idle);
+}
+
+.navigation__icon {
+  display: block;
+}
+
+.navigation__tab[aria-current='page'] {
+  color: var(--color-nav-active);
+}
+
+/* Marker dot under the active tab. */
+.navigation__tab[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--color-nav-active);
+}
+
+.navigation__tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -4px;
+  border-radius: var(--radius-pill);
+}

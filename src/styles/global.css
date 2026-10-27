@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-backdrop);
+  font-family: var(--font-heading);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+/* The prototype is a 375px-wide mobile frame. On wider screens it is centred
+   as a rounded card; on phones it fills the screen. */
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--screen-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: clip;
+}
+
+.screen--dark {
+  background: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+}
+
+.screen--light {
+  background: var(--color-bg-light);
+  color: var(--color-text-on-light);
+}
+
+@media (min-width: 480px) {
+  .screen {
+    min-height: 1024px;
+    margin: 24px auto;
+    border-radius: var(--radius-screen);
+  }
+}

@@ -1,0 +1,42 @@
+/* Design tokens taken from the "NFT Comparison Application" Figma prototype. */
+:root {
+  /* Colour */
+  --color-bg-dark: #090909;
+  --color-bg-light: #ffffff;
+  --color-text-on-dark: #fdfcfc;
+  --color-text-on-dark-muted: #cccccc;
+  --color-text-on-light: #000000;
+  --color-text-on-light-muted: rgba(0, 0, 0, 0.5);
+  --color-accent: #f04d6b;
+  --color-nav-active: #090909;
+  --color-nav-idle: rgba(0, 0, 0, 0.2);
+  --color-divider: rgba(0, 0, 0, 0.2);
+  --color-image-placeholder: #c4c4c4;
+  --color-backdrop: #2a2a2a;
+
+  /* Type */
+  --font-heading: 'Oxygen', system-ui, sans-serif;
+  --font-ui: 'Hanken Grotesk', system-ui, sans-serif;
+
+  --text-h1-size: 48px;
+  --text-h1-line: 48px;
+  --text-h2-size: 32px;
+  --text-h2-line: 40px;
+  --text-subheadline-size: 16px;
+  --text-subheadline-line: 16px;
+  --text-body-size: 14px;
+  --text-body-line: 24px;
+  --text-nav-size: 16px;
+  --text-nav-line: 16px;
+
+  /* Shape */
+  --radius-screen: 20px;
+  --radius-tile: 10px;
+  --radius-pill: 100px;
+  --shadow-nav: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --space-gutter: 16px;
+  --space-tile-gap: 8px;
+  --screen-width: 375px;
+}

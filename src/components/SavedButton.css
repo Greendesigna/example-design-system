@@ -1,0 +1,20 @@
+.saved-button {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.saved-button img,
+.saved-button__filled {
+  display: block;
+}
+
+.saved-button__filled {
+  color: var(--color-accent);
+}
+
+.saved-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
