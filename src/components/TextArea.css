@@ -1,0 +1,23 @@
+.text-area {
+  display: block;
+  box-sizing: border-box;
+  width: 316px;
+  min-height: 100px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--accent-alternative);
+  box-shadow: var(--shadow-inner-detail);
+  font: var(--type-body);
+  color: var(--content-dark);
+  resize: vertical;
+}
+
+.text-area:focus-visible {
+  outline: 2px solid var(--focus-ring);
+}
+
+.text-area:disabled {
+  background: var(--transparent-light);
+  cursor: not-allowed;
+}

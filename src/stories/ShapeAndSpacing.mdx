@@ -1,14 +1,26 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 
-<Meta title="Foundations/Shape and spacing" />
+<Meta title="Foundations/Shape, spacing and effects" />
 
-# Shape and spacing
-
-## Radius
+# Shape, spacing and effects
 
 export const box = { background: 'var(--color-image-placeholder)' };
 
+## Radius
+
 <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', flexWrap: 'wrap', margin: '24px 0' }}>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 110, height: 60, borderRadius: 'var(--radius-control)' }} />
+    <figcaption><code>--radius-control</code> 8px<br />Fields, switches, checkboxes</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 110, height: 60, borderRadius: 'var(--radius-button)' }} />
+    <figcaption><code>--radius-button</code> 24px<br />Buttons</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ ...box, width: 110, height: 60, borderRadius: 'var(--radius-card)' }} />
+    <figcaption><code>--radius-card</code> 10px<br />Cards</figcaption>
+  </figure>
   <figure style={{ margin: 0 }}>
     <div style={{ ...box, width: 120, height: 120, borderRadius: 'var(--radius-screen)' }} />
     <figcaption><code>--radius-screen</code> 20px<br />Phone-width screen on wide displays</figcaption>
@@ -34,10 +46,23 @@ export const box = { background: 'var(--color-image-placeholder)' };
 - `--space-gutter` 16px: side margin of every screen
 - `--space-tile-gap` 8px: gap between NFT tiles, in the grid and in rows
 
-## Shadow
+## Effects
 
-<div style={{ padding: 32 }}>
-  <div style={{ width: 160, height: 64, borderRadius: 'var(--radius-pill)', background: '#fff', boxShadow: 'var(--shadow-nav)' }} />
+<div style={{ display: 'flex', gap: 40, flexWrap: 'wrap', padding: 24, background: '#f3f3f3', borderRadius: 8 }}>
+  <figure style={{ margin: 0 }}>
+    <div style={{ width: 120, height: 80, borderRadius: 10, background: 'var(--accent-light)', boxShadow: 'var(--shadow-alert)' }} />
+    <figcaption><code>--shadow-alert</code><br />2 2 4 at 17%</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ width: 120, height: 80, borderRadius: 10, background: 'var(--accent-light)', boxShadow: 'var(--shadow-inner-detail)' }} />
+    <figcaption><code>--shadow-inner-detail</code><br />inset 2 2 4 at 25%</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ width: 120, height: 80, borderRadius: 10, background: 'var(--accent-light)', boxShadow: 'var(--shadow-glow)' }} />
+    <figcaption><code>--shadow-glow</code><br />0 0 2 amber</figcaption>
+  </figure>
+  <figure style={{ margin: 0 }}>
+    <div style={{ width: 160, height: 64, borderRadius: 'var(--radius-pill)', background: '#fff', boxShadow: 'var(--shadow-nav)' }} />
+    <figcaption><code>--shadow-nav</code><br />0 0 20 at 10% (navigation bar)</figcaption>
+  </figure>
 </div>
-
-`--shadow-nav`: `0 0 20px rgba(0, 0, 0, 0.1)`, used by the floating navigation bar.

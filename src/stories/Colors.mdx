@@ -4,7 +4,51 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 # Colors
 
-CSS variables from `src/styles/tokens.css`. Transparent values are shown over white.
+CSS variables from `src/styles/tokens.css`. Transparent values are shown over white. There are two sets: the
+**Example UI palette** and the **NFT app colours**.
+
+# Example UI palette
+
+## Brand
+
+<ColorPalette>
+  <ColorItem title="--brand-primary" subtitle="Primary buttons, links, error" colors={['#d8186e']} />
+  <ColorItem title="--brand-secondary" subtitle="Focus accents, tooltip" colors={['#d7db38']} />
+  <ColorItem title="--brand-tertiary" subtitle="Secondary buttons, switches, valid state" colors={['#006e7a']} />
+</ColorPalette>
+
+## Accent and content
+
+<ColorPalette>
+  <ColorItem title="--accent-light" subtitle="Fields and alternative buttons" colors={['#fbfbeb']} />
+  <ColorItem title="--accent-dark" subtitle="Dark card surface" colors={['#01363c']} />
+  <ColorItem title="--accent-alternative" subtitle="Disabled and neutral surfaces" colors={['#d8d8d8']} />
+  <ColorItem title="--content-dark" subtitle="Text on light surfaces" colors={['#0d1d16']} />
+  <ColorItem title="--content-light" subtitle="Text on dark surfaces" colors={['#f6f7f8']} />
+  <ColorItem title="--content-primary" subtitle="Hover outline for fields" colors={['#625e57']} />
+</ColorPalette>
+
+## Transparent and clear
+
+<ColorPalette>
+  <ColorItem title="--transparent-dark" subtitle="85% overlay" colors={['rgba(180, 191, 184, 0.85)']} />
+  <ColorItem title="--transparent-light" subtitle="60% surface for cards and disabled fields" colors={['rgba(228, 233, 229, 0.6)']} />
+  <ColorItem title="--clear-dark" subtitle="60% dark scrim" colors={['rgba(1, 54, 60, 0.6)']} />
+  <ColorItem title="--clear-light" subtitle="60% light scrim" colors={['rgba(251, 251, 235, 0.6)']} />
+</ColorPalette>
+
+## Interaction states
+
+<ColorPalette>
+  <ColorItem title="--state-primary-hover" subtitle="Primary button hover and focus" colors={['#902152']} />
+  <ColorItem title="--state-tertiary-hover" subtitle="Secondary button hover" colors={['#084a51']} />
+  <ColorItem title="--state-tertiary-pressed" subtitle="Secondary button pressed" colors={['#148b98']} />
+  <ColorItem title="--state-light-hover" subtitle="Alternative button hover" colors={['#d9d9c9']} />
+  <ColorItem title="--state-light-pressed" subtitle="Alternative button pressed" colors={['#ffffe8']} />
+  <ColorItem title="--focus-ring" subtitle="Keyboard focus outline" colors={['#f9ff00']} />
+</ColorPalette>
+
+# NFT app colours
 
 ## Backgrounds
 

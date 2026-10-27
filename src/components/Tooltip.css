@@ -1,0 +1,52 @@
+.tooltip {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip__body {
+  padding: 24px;
+  border-radius: var(--radius-control);
+  background: var(--brand-secondary);
+  font: var(--type-emphasised);
+  color: var(--content-dark);
+}
+
+.tooltip__beak {
+  flex: none;
+  background: var(--brand-secondary);
+}
+
+/* The beak sits before the box (top, left) or after it (bottom, right). */
+.tooltip--top,
+.tooltip--bottom {
+  flex-direction: column;
+}
+.tooltip--top .tooltip__beak,
+.tooltip--bottom .tooltip__beak {
+  width: 24px;
+  height: 12px;
+}
+.tooltip--top .tooltip__beak {
+  order: -1;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+.tooltip--bottom .tooltip__beak {
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.tooltip--left,
+.tooltip--right {
+  flex-direction: row;
+}
+.tooltip--left .tooltip__beak,
+.tooltip--right .tooltip__beak {
+  width: 12px;
+  height: 24px;
+}
+.tooltip--left .tooltip__beak {
+  order: -1;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+.tooltip--right .tooltip__beak {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}

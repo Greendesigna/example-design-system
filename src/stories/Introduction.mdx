@@ -2,36 +2,44 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Introduction" />
 
-# NFT Comparison design system
+# Example design system
 
-The tokens, components and screens behind the [NFT Comparison app](https://greendesigna.github.io/nft-comparison-app/),
-built from the "GDA. Project - NFT Comparison Application" Figma prototype.
+A general-purpose design system example: tokens, components and screens that you can reuse across projects.
+It brings together two sets that share one set of naming and tooling:
+
+- **Example UI:** a palette, ten text styles, effects and the core controls: buttons, switches, form fields, tooltip and
+  cards. Taken from the "Portfolio Example UI Design System" Figma file.
+- **NFT Comparison app:** a mobile app built on the same system: navigation bar, category tabs, NFT tiles and two screens.
+  Live at [greendesigna.github.io/nft-comparison-app](https://greendesigna.github.io/nft-comparison-app/).
 
 ## What's here
 
 - **Foundations:** [Colors](?path=/docs/foundations-colors--docs), [Typography](?path=/docs/foundations-typography--docs)
-  and [Shape and spacing](?path=/docs/foundations-shape-and-spacing--docs). Each value is a CSS variable in
-  `src/styles/tokens.css` and a Figma variable with the same name.
-- **Components:** Navigation, Nav icons, Category tabs, Saved button and NFT tile. Use the controls on each page to try
-  every state.
-- **Screens:** the Compare and Detail screens, working end to end with the components above.
+  and [Shape, spacing and effects](?path=/docs/foundations-shape-spacing-and-effects--docs). Each value is a CSS variable in
+  `src/styles/tokens.css` and a Figma variable or style with the same name.
+- **Components:** every component with all its states and controls to try them.
+- **Screens:** the Compare and Detail screens, working end to end.
 
 ## Using the tokens
 
-Every style in the app reads from a token, so changing a value in `tokens.css` updates every component:
+Every component reads from a token, so changing a value in `tokens.css` updates everything that uses it:
 
 ```css
-.my-card {
-  background: var(--color-bg-light);
-  border-radius: var(--radius-tile);
-  font-family: var(--font-heading);
+.my-panel {
+  background: var(--accent-light);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-inner-detail);
+  font: var(--type-body);
 }
 ```
 
+Text styles are also available as classes (`type-title-lg`, `type-body`, and so on) from `src/styles/typography.css`.
+
 ## Keeping Figma and code in step
 
-The Figma file "NFT Comparison App - Design System" uses the same names. Colour variables carry their CSS name as
-code syntax, for example `var(--color-accent)`, and the five text styles match the `--text-*` tokens.
+The Figma file "Example Design System" uses the same names. Colour variables carry their CSS name as code syntax, for
+example `var(--brand-primary)`. Components use the same property names as the React props: `Button` has the same
+four types and five states in both places.
 
 ## Run it
 

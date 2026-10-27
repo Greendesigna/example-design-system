@@ -1,0 +1,11 @@
+/* Text styles from the Example UI design system. Each class matches a Figma text style. */
+.type-title-lg { font: var(--type-title-lg); letter-spacing: -0.02em; }
+.type-title-md { font: var(--type-title-md); letter-spacing: -0.02em; }
+.type-title-sm { font: var(--type-title-sm); }
+.type-pre-title { font: var(--type-pre-title); letter-spacing: 0.02em; text-transform: uppercase; }
+.type-emphasised { font: var(--type-emphasised); }
+.type-body { font: var(--type-body); }
+.type-small { font: var(--type-small); }
+.type-button { font: var(--type-button); }
+.type-link { font: var(--type-link); text-decoration: underline; }
+.type-note { font: var(--type-note); }

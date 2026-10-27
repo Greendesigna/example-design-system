@@ -39,4 +39,52 @@
   --space-gutter: 16px;
   --space-tile-gap: 8px;
   --screen-width: 375px;
+
+  /* ---- Example UI tokens (from the Portfolio Example UI design system) ---- */
+
+  /* Palette */
+  --brand-primary: #d8186e;
+  --brand-secondary: #d7db38;
+  --brand-tertiary: #006e7a;
+  --accent-light: #fbfbeb;
+  --accent-dark: #01363c;
+  --accent-alternative: #d8d8d8;
+  --content-dark: #0d1d16;
+  --content-light: #f6f7f8;
+  --content-primary: #625e57;
+  --transparent-dark: rgba(180, 191, 184, 0.85);
+  --transparent-light: rgba(228, 233, 229, 0.6);
+  --clear-dark: rgba(1, 54, 60, 0.6);
+  --clear-light: rgba(251, 251, 235, 0.6);
+
+  /* Interaction states */
+  --state-primary-hover: #902152;
+  --state-tertiary-hover: #084a51;
+  --state-tertiary-pressed: #148b98;
+  --state-light-hover: #d9d9c9;
+  --state-light-pressed: #ffffe8;
+  --focus-ring: #f9ff00;
+
+  /* Type: font shorthand (weight size/line-height family). Futura is not a web font, so
+     Title-lg falls back to Jost, a close geometric match. */
+  --type-title-lg: 700 42px/44px 'Futura', 'Jost', sans-serif;
+  --type-title-md: 700 32px/1.2 'Saira Semi Condensed', sans-serif;
+  --type-title-sm: 400 24px/1.3 'Saira', sans-serif;
+  --type-pre-title: 400 20px/1.2 'Darker Grotesque', sans-serif;
+  --type-emphasised: italic 600 14px/1.45 'Jost', sans-serif;
+  --type-body: 400 14px/1.45 'Jost', sans-serif;
+  --type-small: 300 12px/1.45 'Jost', sans-serif;
+  --type-button: 500 14px/1.45 'Jost', sans-serif;
+  --type-link: 400 14px/1.45 'Jost', sans-serif;
+  --type-note: 400 16px/1.45 'IBM Plex Sans', sans-serif;
+
+  /* Shape */
+  --radius-control: 8px;
+  --radius-button: 24px;
+  --radius-card: 10px;
+
+  /* Effects */
+  --shadow-alert: 2px 2px 4px rgba(13, 29, 22, 0.17);
+  --shadow-inner-detail: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 2px #edae2b;
 }

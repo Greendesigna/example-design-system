@@ -4,7 +4,36 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Typography
 
-Oxygen for headings and body text, Hanken Grotesk for the category row. Both load from Google Fonts.
+Two sets of text styles. The **Example UI** styles use Futura, Saira, Darker Grotesque, Jost and IBM Plex Sans. The
+**NFT app** styles use Oxygen and Hanken Grotesk. All load from Google Fonts, except Futura.
+
+## Example UI
+
+export const exampleStyles = [
+  { name: 'Title-lg', spec: 'Futura Bold (Jost Bold fallback), 42 / 44, -2%', token: '--type-title-lg', cls: 'type-title-lg', use: 'Large titles, typically h1', sample: 'Title / Header' },
+  { name: 'Title-md', spec: 'Saira Semi Condensed Bold, 32, -2%', token: '--type-title-md', cls: 'type-title-md', use: 'Medium titles, typically h2', sample: 'Medium title' },
+  { name: 'Title-sm', spec: 'Saira Regular, 24', token: '--type-title-sm', cls: 'type-title-sm', use: 'Small titles, typically h3', sample: 'Small title' },
+  { name: 'Pre-title', spec: 'Darker Grotesque Regular, 20, uppercase, +2%', token: '--type-pre-title', cls: 'type-pre-title', use: 'Label above a title', sample: 'This is a pre-title' },
+  { name: 'Emphasised', spec: 'Jost SemiBold Italic, 14', token: '--type-emphasised', cls: 'type-emphasised', use: 'Emphasised text or subtitles', sample: 'This is for emphasised text or titles' },
+  { name: 'Body', spec: 'Jost Regular, 14', token: '--type-body', cls: 'type-body', use: 'Body text', sample: 'This is a regular text body. This is a regular text body.' },
+  { name: 'Small', spec: 'Jost Light, 12', token: '--type-small', cls: 'type-small', use: 'Small print', sample: 'This is used for small text areas.' },
+  { name: 'Button text', spec: 'Jost Medium, 14', token: '--type-button', cls: 'type-button', use: 'Buttons and field text', sample: 'Button text' },
+  { name: 'Link text', spec: 'Jost Regular, 14, underlined', token: '--type-link', cls: 'type-link', use: 'Links', sample: 'Link text' },
+  { name: 'Design System Note', spec: 'IBM Plex Sans Regular, 16', token: '--type-note', cls: 'type-note', use: 'Annotations in documentation', sample: 'Design system note' },
+];
+
+{exampleStyles.map((s) => (
+  <div key={s.name} style={{ padding: '20px 0', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+    <div className={s.cls} style={{ color: 'var(--content-dark)' }}>{s.sample}</div>
+    <div style={{ marginTop: 10, fontSize: 13, color: 'rgba(0,0,0,0.6)' }}>
+      <strong>{s.name}</strong> · {s.spec} · {s.use}
+      <br />
+      <code>{s.token}</code> · <code>.{s.cls}</code>
+    </div>
+  </div>
+))}
+
+## NFT app
 
 export const styles = [
   { name: 'Headline H1', spec: 'Oxygen Bold, 48 / 48', tokens: '--text-h1-size, --text-h1-line', use: 'Compare screen title', sample: 'Compare NFTs', style: { fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h1-size)', lineHeight: 'var(--text-h1-line)' } },

@@ -1,7 +1,11 @@
-# NFT Comparison App
+# Example Design System
 
-A mobile NFT browsing app, built from the "GDA. Project - NFT Comparison Application" Figma prototype.
-React + Vite + TypeScript with plain CSS.
+A general-purpose design system example with a working app built on it. React + Vite + TypeScript with plain CSS.
+
+- **Example UI:** palette, text styles, effects, and buttons, switches, form fields, tooltip and cards. From the
+  "Portfolio Example UI Design System" Figma file.
+- **NFT Comparison app:** a mobile NFT browsing app, built from the "GDA. Project - NFT Comparison Application" Figma
+  prototype, using the same tokens and tooling.
 
 **Live site:** https://greendesigna.github.io/nft-comparison-app/ (deploys automatically from `main` with GitHub Pages)
 
@@ -23,9 +27,10 @@ npm run storybook        # opens http://localhost:6006
 npm run build-storybook  # static build in storybook-static/
 ```
 
-It documents the design tokens (colours, typography, shape and spacing), each component with its states, and the
+It documents the design tokens (colours, typography, shape, spacing and effects), each component with its states, and the
 Compare and Detail screens. Stories live next to the code: `src/components/*.stories.tsx`, `src/screens/*.stories.tsx`,
-and the token pages in `src/stories/*.mdx`. The matching Figma file is "NFT Comparison App - Design System".
+and the token pages in `src/stories/*.mdx`. The matching Figma file is "Example Design System" (see
+https://www.figma.com/design/9mrNw4rLhRcrnbxMeySKko). Token names are the same in Figma and CSS.
 
 ## What's built
 
