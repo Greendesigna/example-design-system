@@ -7,9 +7,9 @@ A general-purpose design system example with a working app built on it. React + 
 - **NFT Comparison app:** a mobile NFT browsing app, built from the "GDA. Project - NFT Comparison Application" Figma
   prototype, using the same tokens and tooling.
 
-**Live site:** https://greendesigna.github.io/nft-comparison-app/ (deploys automatically from `main` with GitHub Pages)
+**Live site:** https://greendesigna.github.io/example-design-system/ (deploys automatically from `main` with GitHub Pages)
 
-**Design system (Storybook):** https://greendesigna.github.io/nft-comparison-app/storybook/
+**Design system (Storybook):** https://greendesigna.github.io/example-design-system/storybook/
 
 ## Run it
 

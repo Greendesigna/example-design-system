@@ -5,7 +5,7 @@ addons.setConfig({
   theme: create({
     base: 'light',
     brandTitle: 'Example Design System',
-    brandUrl: 'https://greendesigna.github.io/nft-comparison-app/storybook/',
+    brandUrl: 'https://greendesigna.github.io/example-design-system/storybook/',
     colorPrimary: '#d8186e',
     colorSecondary: '#006e7a',
   }),
